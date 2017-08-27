@@ -36,7 +36,7 @@ public class DummyResponse implements Response {
         // Cria os cabeçalhos
         sb.append("Date: ").append(HTTP_DATE_FORMAT.format(new Date()))
                         .append("\r\n");
-        sb.append("Server: Test Server - http://www.thiagovespa.com.br")
+        sb.append("Server: Test Server - http://localhost:8080")
                         .append("\r\n");
         sb.append("Connection: Close").append("\r\n");
         sb.append("Content-Type: text/html; charset=UTF-8").append("\r\n");
