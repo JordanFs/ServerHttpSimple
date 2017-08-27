@@ -5,6 +5,12 @@
  */
 package serverhttp;
 
+import HttpClient.HttpClient;
+import static HttpClient.HttpClient.logger;
+import java.io.IOException;
+import java.net.UnknownHostException;
+import java.util.logging.Level;
+
 /**
  *
  * @author jordanferreirasaran
@@ -15,7 +21,14 @@ public class ServerHttp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        HttpClient client = new HttpClient("localhost", 8080);
+        try {
+                System.out.println(client.getURIRawContent(""));
+        } catch (UnknownHostException e) {
+                logger.log(Level.SEVERE, "Host desconhecido!", e);
+        } catch (IOException e) {
+                logger.log(Level.SEVERE, "Erro de entrada e saída!", e);
+        }
     }
     
 }
